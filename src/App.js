@@ -3,24 +3,24 @@ import React from 'react'
 import './App.css'
 import BookCase from './BookCase'
 
-// Create labels for the shelves
-const shelves = [
-  {
-    "id":"currentlyReading",
-    "name":"Currently Reading"
-  },
-  {
-    "id":"wantToRead",
-    "name":"Want to Read"
-  },
-  {
-    "id":"read",
-    "name":"Read"
-  }
-]
-
 class BooksApp extends React.Component {
+
   state = {
+    books: [],
+    shelves: [
+      {
+        "id":"currentlyReading",
+        "name":"Currently Reading"
+      },
+      {
+        "id":"wantToRead",
+        "name":"Want to Read"
+      },
+      {
+        "id":"read",
+        "name":"Read"
+      }
+    ],
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -29,8 +29,6 @@ class BooksApp extends React.Component {
      */
     showSearchPage: false
   }
-
-
 
   render() {
     return (
@@ -63,7 +61,7 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
 
-              <BookCase />
+              <BookCase shelves={this.state.shelves} books={this.state.books} />
 
             </div>
             <div className="open-search">
