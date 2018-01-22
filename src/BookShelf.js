@@ -6,11 +6,11 @@ class BookShelf extends Component {
 
   render() {
 
-    const shelf = this.props.shelf
+    const {shelfName} = this.props
 
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">{shelf}</h2>
+        <h2 className="bookshelf-title">{shelfName}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
 

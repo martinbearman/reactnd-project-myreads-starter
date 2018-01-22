@@ -12,7 +12,7 @@ class BookCase extends Component {
       <div>
 
         {shelves.map((shelf) => (
-          <BookShelf key={shelf.id} shelf={shelf.name} />
+          <BookShelf key={shelf.id} shelfName={shelf.name} />
         ))}
 
 
